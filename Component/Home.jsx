@@ -143,7 +143,7 @@ function Home() {
       </div>
 
 
-{/* orange box */}
+      {/* orange box */}
 
 
       <div ref={boxRef} className={`orange-box ${show ? "show" : ""}`}

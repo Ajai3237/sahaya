@@ -3,6 +3,14 @@ body {
   padding: 0;
 }
 
+@media (max-width: 480px) {
+  .social-media-icone {
+    justify-content: center !important;
+    flex: 1 1 100%;
+    margin-top: 10px; /* Optional: add some spacing */
+  }
+}
+
 
 /* media queries for nav bar */
 
@@ -38,17 +46,20 @@ body {
 
   nav ul {
     flex-direction: column !important;
-    gap: 10px !important;
+    gap: 5px !important;
     align-items: center;
   }
 
   nav a {
     font-size: 16px !important;
+   
+    
   }
 
   header img {
     height: 60px !important;
   }
+ 
 }
 
 /* mobile screen nav bar */
@@ -88,7 +99,7 @@ body {
     transition: max-height 0.3s ease-in-out;
     text-align: center;
     border-radius: 20px;
-    
+
   }
 
   .nav-menu.open {
@@ -131,6 +142,35 @@ body {
 }
 
 
+/* logo effect */
+/* Unique logo animation */
+.logo-effect {
+  opacity: 0;
+  transform: scale(0.8);
+  animation: popInGlow 1.2s ease-out forwards;
+}
+
+/* Keyframes: pop-in + glowing pulse */
+@keyframes popInGlow {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+    filter: drop-shadow(0 0 0px rgba(255, 183, 3, 0));
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 12px rgba(255, 183, 3, 0.6));
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: drop-shadow(0 0 6px rgba(255, 183, 3, 0.3));
+  }
+}
+
+
+
 
 
 
@@ -138,7 +178,8 @@ body {
 
 @media (max-width: 768px) {
   div[style*="minHeight"] {
-    flex-direction: column !important; /* stack vertically */
+    flex-direction: column !important;
+    /* stack vertically */
     padding: 20px !important;
     text-align: center !important;
   }
@@ -155,7 +196,7 @@ body {
     order: 2;
     margin: 0 auto !important;
     max-width: 100% !important;
-        
+
   }
 
 
@@ -173,41 +214,48 @@ body {
     max-width: 100% !important;
     border-radius: 20px !important;
     padding-bottom: 150px;
+    position: relative;
   }
 }
-/* animation div 1 */
+
+/* Reset animations for children */
 .hero-text-container > * {
   opacity: 0;
-  transform: translateX(-100px); /* start offscreen left */
-  animation-fill-mode: forwards; /* keep final state after animation */
+  transform: translateY(30px) scale(0.95);
+  animation-fill-mode: forwards;
 }
 
 /* Animate heading */
 .hero-text-container h1 {
-  animation: slideInLeft 0.8s ease-out 0.2s forwards; /* delay 0.2s */
+  animation: fadeUpScale 1s ease-out 0.2s forwards;
 }
 
 /* Animate paragraph */
 .hero-text-container p {
-  animation: slideInLeft 0.8s ease-out 0.4s forwards; /* delay 0.4s */
+  animation: fadeUpScale 1s ease-out 0.4s forwards;
 }
 
 /* Animate button */
 .hero-text-container button {
-  animation: slideInLeft 0.8s ease-out 0.6s forwards; /* delay 0.6s */
+  animation: fadeUpScale 1s ease-out 0.6s forwards;
 }
 
-/* Keyframes for slide-in from left */
-@keyframes slideInLeft {
+/* Keyframes for smooth fade-up & scale */
+@keyframes fadeUpScale {
   0% {
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateY(30px) scale(0.95);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.02);
   }
   100% {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0) scale(1);
   }
 }
+
 
 
 /* right imag */
@@ -222,6 +270,7 @@ body {
     opacity: 0;
     transform: translateX(100px);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0);
@@ -271,7 +320,7 @@ body {
     /* so it doesn’t overlap weirdly */
     bottom: 20px;
     left: 1px;
-    
+
   }
 
   .orange-box h3 {
@@ -286,45 +335,67 @@ body {
     font-size: 16px !important;
   }
 }
+
 /* animatin to the orange box */
 
 .orange-box {
   position: relative;
-  overflow: hidden; /* ensures the shine stays inside */
-  background-color: #FBA018;
-  border-radius: 16px;
-  padding: 30px;
-  width: 90%;
-  max-width: 520px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-  font-family: 'Roboto', sans-serif;
-  text-align: center;
+  opacity: 0;
+  transform: scale(0.95);
+  animation: boxPop 0.8s ease-out forwards, boxPulse 3s infinite ease-in-out;
+  overflow: hidden; /* for shine sweep */
 }
 
-/* Shimmer comet effect */
+/* Shine sweep */
 .orange-box::before {
   content: "";
   position: absolute;
   top: 0;
-  left: -100%;
+  left: -150%;
   width: 50%;
   height: 100%;
   background: linear-gradient(
     120deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.5) 50%,
-    rgba(255, 255, 255, 0) 100%
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0)
   );
   transform: skewX(-20deg);
-  animation: comet 3.5s linear infinite;
+  animation: shineSweep 3s ease-in-out infinite;
 }
 
-@keyframes comet {
+/* Pop-in animation */
+@keyframes boxPop {
   0% {
-    left: -50%;
+    opacity: 0;
+    transform: scale(0.95);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   }
   100% {
-    left: 120%; 
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Gentle pulsing glow */
+@keyframes boxPulse {
+  0%, 100% {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2),
+                0 0 15px rgba(251, 160, 24, 0.5);
+  }
+  50% {
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25),
+                0 0 25px rgba(251, 160, 24, 0.7);
+  }
+}
+
+/* Shine sweep animation */
+@keyframes shineSweep {
+  0% {
+    left: -150%;
+  }
+  100% {
+    left: 150%;
   }
 }
 
@@ -365,7 +436,7 @@ body {
   background-color: #fff;
   padding: 30px 20px;
   border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
   text-align: center;
   transition: transform 0.5s ease, box-shadow 0.1s ease;
   transform-style: preserve-3d;
@@ -373,7 +444,7 @@ body {
 }
 
 .card:hover {
-  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
 }
 
 
@@ -585,14 +656,17 @@ body {
 
 .center-box {
   position: absolute;
-  top: 695px; /* Adjust this to control vertical position */
+  top: 695px;
+  /* Adjust this to control vertical position */
   left: 57%;
-  transform: translateX(-50%); /* Center horizontally */
+  transform: translateX(-50%);
+  /* Center horizontally */
   background-color: #FBA018;
   padding: 30px;
   border-radius: 50px;
   width: 1000px;
-  max-width: 90%; /* Avoid overflow */
+  max-width: 90%;
+  /* Avoid overflow */
   height: auto;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   z-index: 10;
