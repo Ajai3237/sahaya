@@ -237,10 +237,7 @@ body {
 
 /* orange div */
 /* Large screens - default */
-.orange-box {
-  width: 520px;
-  
-}
+
 
 /* Medium screens (tablets) */
 @media (max-width: 1024px) {
@@ -265,7 +262,7 @@ body {
 /* Small screens (mobiles) */
 @media (max-width: 768px) {
   .orange-box {
-    width: 250px;
+    width: 84%;
     height: 150px;
     padding: 15px;
     right: 20px;
