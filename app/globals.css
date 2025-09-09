@@ -172,7 +172,7 @@ body {
     order: 2;
     margin: 0 auto !important;
     max-width: 100% !important;
-    
+
 
   }
 
@@ -192,7 +192,7 @@ body {
     border-radius: 20px !important;
     padding-bottom: 150px;
     position: relative;
-   
+
   }
 }
 
@@ -294,13 +294,14 @@ body {
 
     width: auto;
     height: 165px;
-    margin-left: 30p;
+    
     right: 20px;
     top: auto;
     right: auto;
     /* so it doesn’t overlap weirdly */
     bottom: 20px;
     left: 1px;
+    
 
 
   }
@@ -868,7 +869,24 @@ body {
 
 
 /* footer */
+.contact-row {
+  display: flex;
+  justify-content: center;
+  /* Center items in large screen */
+  gap: 20px;
+  /* Space between location and number */
+  flex-wrap: wrap;
+  /* Wrap in smaller screens */
+  margin-bottom: 10px;
+}
+
 @media (max-width: 1024px) {
+  .contact-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
   footer {
     padding: 40px 40px 20px !important;
 
@@ -912,13 +930,7 @@ body {
     align-items: center;
   }
 
-  .footer-img {
-    padding: 0;
-    margin: 10px 0;
-    /* ✅ Small margin for breathing space */
-    width: 80px;
-    /* ✅ Slightly smaller image on mobile */
-  }
+
 
   .Navigations {
     margin-top: 10px;

@@ -43,15 +43,51 @@ function Footer() {
                     </div>
 
                     {/* Logo + Social Section */}
-                    <div className="footer-item center-text">
-                        <img className="footer-img"
-                            src="/Asset/SAHAYA_V_CARD_page-0002-removebg-preview.png"
-                            alt="Logo"
-                            style={{ width: "100px",}}
-                        />
-                        
-                      
+                   
+                    <div className="footer-item center-text contact-info">
+                        <h2
+                            style={{
+                                color: "#ffff",
+                                marginBottom: "10px",
+                                fontSize: "clamp(18px, 2vw, 25px)",
+                            }}
+                        >
+                            Get in Touch
+                        </h2>
+                        <p
+                            style={{
+                                fontSize: "clamp(12px, 1.5vw, 14px)",
+                                color: "#ccc",
+                                marginBottom: "20px",
+                            }}
+                        >
+                            Lorem Ipsum is placeholder text used in design and development before the
+                            final content is ready. It helps you see how text will look on a webpage,
+                            poster, or layout.
+                        </p>
+
+                        {/* ✅ Wrap Location & Phone in a Flex Container */}
+                        <div className="contact-row">
+                            <p style={{ color: "#fff" }}>
+                                <strong>📍</strong> Location
+                            </p>
+                            <p style={{ color: "#fff" }}>
+                                <strong>📞</strong> +91 9995 27 5823
+                            </p>
+                        </div>
+
+                        <p>
+                            <strong>📧 </strong>{" "}
+                            <a
+                                style={{ textDecoration: "none", color: "#ffff"  }}
+                                href="mailto:sahayahomemedicalcare@gmail.com"
+                            >
+                                
+                            sahayahomemedicalcare@gmail.com
+                            </a>
+                        </p>
                     </div>
+
                 </div>
 
                 {/* Bottom Bar */}
@@ -59,7 +95,7 @@ function Footer() {
                     style={{
                         borderTop: "1px solid #333",
                         paddingTop: "10px",
-                       
+
                         textAlign: "center",
                         color: "#aaa",
                         fontSize: "14px",

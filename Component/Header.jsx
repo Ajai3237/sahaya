@@ -29,75 +29,8 @@ export default function Header() {
                     boxSizing: "border-box",
                 }}
             >
-                <div
-                    style={{
-                        maxWidth: "1200px",
-                        margin: "0 auto",
-                        display: "flex",
-                        flexWrap: "wrap",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                        gap: "10px",
-                        textAlign: "center",
-                    }}
-                >
-                    {/* Phone */}
-                    <a
-                        href="tel:+919995275823"
-                        style={{
-                            color: "#fff",
-                            textDecoration: "none",
-                            fontSize: "14px",
-                            flex: "1 1 auto",
-                            textAlign: "left",
-                        }}
-                    >
-                        +91 9995 27 5823
-                    </a>
-
-                    {/* Email */}
-                    <a
-                        href="mailto:sahayahomemedicalcare@gmail.com"
-                        style={{
-                            color: "#fff",
-                            textDecoration: "none",
-                            fontFamily: "Roboto, sans-serif",
-                            fontSize: "14px",
-                            flex: "2 1 auto",
-                            textAlign: "center",
-                            wordBreak: "break-word",
-                        }}
-                    >
-                        sahayahomemedicalcare@gmail.com
-                    </a>
-
-                    {/* Social Icons */}
-                    <div className="social-media-icone"
-                        style={{
-                            display: "flex",
-                            gap: "15px",
-                            justifyContent: "flex-end",
-                            flex: "1 1 auto",
-                        }}
-                    >
-                        <a
-                            href="https://facebook.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={{ color: "#fff" }}
-                        >
-                            <FontAwesomeIcon icon={faFacebookF} size="lg" />
-                        </a>
-                        <a
-                            href="https://instagram.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={{ color: "#fff" }}
-                        >
-                            <FontAwesomeIcon icon={faInstagram} size="lg" />
-                        </a>
-                    </div>
-                </div>
+                
+                
             </div>
 
             {/* Logo + Navbar */}
