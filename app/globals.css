@@ -79,7 +79,7 @@ body {
 
   .nav-menu {
     position: absolute;
-    top: 70%;
+    top: 60%;
     right: 0;
     background: white;
     width: 20%;
@@ -155,7 +155,9 @@ body {
     order: 2;
     margin: 0 auto !important;
     max-width: 100% !important;
+    
   }
+
 
   h1 {
     font-size: 32px !important;

@@ -123,7 +123,7 @@ function Home() {
         <div className='hero-image-container'
           style={{ flex: "1", display: "flex", justifyContent: "flex-end", paddingTop: "100px", marginRight: "-60px", minWidth: "300px" }}
         >
-          <img src="/Asset/Dashboard_952_hospice_11_18.jpg" alt="Care"
+          <img src="/Asset/Dashboard_952_hospice_11_18.jpg" alt="Care" className="imageRigh"
             style={{
               width: "100%",
               maxWidth: "900px",
