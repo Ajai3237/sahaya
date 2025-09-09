@@ -54,17 +54,7 @@ function Footer() {
                         >
                             Get in Touch
                         </h2>
-                        <p
-                            style={{
-                                fontSize: "clamp(12px, 1.5vw, 14px)",
-                                color: "#ccc",
-                                marginBottom: "20px",
-                            }}
-                        >
-                            Lorem Ipsum is placeholder text used in design and development before the
-                            final content is ready. It helps you see how text will look on a webpage,
-                            poster, or layout.
-                        </p>
+                      
 
                         {/* ✅ Wrap Location & Phone in a Flex Container */}
                         <div className="contact-row">
