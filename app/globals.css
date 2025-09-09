@@ -67,6 +67,8 @@ body {
 
 
 
+
+
 /* media queries for home div 1 */
 
 @media (max-width: 768px) {
@@ -106,6 +108,60 @@ body {
     padding-bottom: 90px;
   }
 }
+/* animation div 1 */
+.hero-text-container > * {
+  opacity: 0;
+  transform: translateX(-100px); /* start offscreen left */
+  animation-fill-mode: forwards; /* keep final state after animation */
+}
+
+/* Animate heading */
+.hero-text-container h1 {
+  animation: slideInLeft 0.8s ease-out 0.2s forwards; /* delay 0.2s */
+}
+
+/* Animate paragraph */
+.hero-text-container p {
+  animation: slideInLeft 0.8s ease-out 0.4s forwards; /* delay 0.4s */
+}
+
+/* Animate button */
+.hero-text-container button {
+  animation: slideInLeft 0.8s ease-out 0.6s forwards; /* delay 0.6s */
+}
+
+/* Keyframes for slide-in from left */
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* right imag */
+.hero-image-container img {
+  opacity: 0;
+  transform: translateX(100px);
+  animation: slideInRight 1s ease-out forwards;
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+
+
 
 
 
@@ -164,15 +220,45 @@ body {
 /* animatin to the orange box */
 
 .orange-box {
-  opacity: 0;
-  transform: translateX(150px); /* start offscreen to the right */
-  transition: all 0.8s ease-out;
+  position: relative;
+  overflow: hidden; /* ensures the shine stays inside */
+  background-color: #FBA018;
+  border-radius: 16px;
+  padding: 30px;
+  width: 90%;
+  max-width: 520px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
 }
 
-.orange-box.show {
-  opacity: 1;
-  transform: translateX(0); /* end at normal position */
+/* Shimmer comet effect */
+.orange-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+  animation: comet 3.5s linear infinite;
 }
+
+@keyframes comet {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 120%; 
+  }
+}
+
 
 
 
@@ -202,6 +288,23 @@ body {
 .card.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+
+/*  animation */
+.card {
+  background-color: #fff;
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  text-align: center;
+  transition: transform 0.5s ease, box-shadow 0.1s ease;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
 }
 
 
@@ -489,6 +592,8 @@ body {
   }
 }
 
+/*  */
+
 
 
 /* why u choose us div 2 */
@@ -636,6 +741,9 @@ body {
     width: 100%;
   }
 }
+
+/*  */
+
 
 
 

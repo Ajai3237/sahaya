@@ -100,7 +100,7 @@ function About() {
                         <div
                             key={i}
                             className={show ? "show" : ""}
-                            style={{ transitionDelay: `${i * 0.2}s` }} // ✅ stagger effect
+                            style={{ transitionDelay: `${i * 0.2}s` }} 
                         >
                             <FontAwesomeIcon
                                 icon={faCircleCheck}
