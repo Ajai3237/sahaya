@@ -137,7 +137,7 @@ export default function Header() {
             fontSize: "28px",
             cursor: "pointer",
             color: "#105F6D",
-            marginBottom:"90px"
+            marginBottom:"140px"
           }}
         >
           <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
@@ -150,7 +150,7 @@ export default function Header() {
               <li
                 key={item}
                 style={{
-                  animationDelay: `${index * 0.1}s`, // Delay for each item
+                  animationDelay: `${index * 0.1}s`,
                 }}
               >
                 <a href={`/${item.toLowerCase()}`} className="nav-link">
