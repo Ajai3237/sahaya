@@ -583,19 +583,17 @@ body {
 
 
 
-/* why choose us  */
 .center-box {
   position: absolute;
-  top: 695px;
-  right: 320px;
+  top: 695px; /* Adjust this to control vertical position */
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally */
   background-color: #FBA018;
   padding: 30px;
   border-radius: 50px;
   width: 1000px;
-  max-width: 100%;
-  /* don’t overflow on small screens */
+  max-width: 90%; /* Avoid overflow */
   height: auto;
-  /* let content adjust */
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   z-index: 10;
   font-family: 'Roboto', sans-serif;
@@ -619,9 +617,6 @@ body {
 @media (max-width: 1024px) {
   .center-box {
     top: 400px;
-    right: 50%;
-    transform: translateX(50%);
-    /* center horizontally */
     width: 80%;
     padding: 25px;
     border-radius: 30px;
@@ -640,10 +635,8 @@ body {
 @media (max-width: 768px) {
   .center-box {
     position: relative;
-    /* no overlap, flows naturally */
     top: auto;
-    bottom: 60px;
-    right: auto;
+    left: auto;
     transform: none;
     margin: 20px auto;
     width: 90%;
@@ -660,8 +653,6 @@ body {
     text-align: left;
   }
 }
-
-/*  */
 
 
 
