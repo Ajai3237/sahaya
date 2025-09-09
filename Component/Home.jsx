@@ -148,7 +148,7 @@ function Home() {
 
       <div ref={boxRef} className={`orange-box ${show ? "show" : ""}`}
         style={{
-          position: "absolute", top: "670px", right: "120px", backgroundColor: "#FBA018", padding: "30px", borderRadius: "16px", width: "90%", maxWidth: "520px",
+          position: "absolute", top: "670px", right: "100px", backgroundColor: "#FBA018", padding: "30px", borderRadius: "16px", width: "88%", maxWidth: "520px",
           boxShadow: "0 6px 20px rgba(0,0,0,0.2)", zIndex: 10, fontFamily: "'Roboto', sans-serif", textAlign: "center", wordWrap: "break-word",
           overflowWrap: "break-word",
         }}

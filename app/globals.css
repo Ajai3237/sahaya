@@ -239,6 +239,7 @@ body {
 /* Large screens - default */
 .orange-box {
   width: 520px;
+  
 }
 
 /* Medium screens (tablets) */
@@ -269,9 +270,11 @@ body {
     padding: 15px;
     right: 20px;
     top: auto;
+    right: auto;
     /* so it doesn’t overlap weirdly */
     bottom: 20px;
     left: 1px;
+    
   }
 
   .orange-box h3 {
