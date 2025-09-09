@@ -586,7 +586,7 @@ body {
 .center-box {
   position: absolute;
   top: 695px; /* Adjust this to control vertical position */
-  left: 50%;
+  left: 56%;
   transform: translateX(-50%); /* Center horizontally */
   background-color: #FBA018;
   padding: 30px;
