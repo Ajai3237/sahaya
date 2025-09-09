@@ -635,7 +635,7 @@ body {
 @media (max-width: 768px) {
   .center-box {
     position: relative;
-    top: auto;
+    top: -30px;
     left: auto;
     transform: none;
     margin: 20px auto;
