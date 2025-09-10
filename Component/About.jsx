@@ -36,7 +36,7 @@ function About() {
         "Nutrition & Diet Support",
         "Spiritual & Holistic Care",
         "Day Care / In-Patient Palliative Unit",
-        "24/7 Telemedicine / Helpline Support",
+        "24/7 Telemedicine / Helpline ",
         "Rehabilitation & Therapy Support",
     ];
 
