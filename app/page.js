@@ -1,6 +1,6 @@
-import Aboutpage from "./about/Page";
-import Contactpage from "./contact/Page";
-import HomePage from "./home/Page";
+import Aboutpage from "./about/page.jsx";
+import Contactpage from "./contact/page.jsx";
+import HomePage from "./home/page.jsx";
 
 export default function Home() {
   return (
