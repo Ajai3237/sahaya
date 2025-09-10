@@ -1,6 +1,6 @@
 import Aboutpage from "./About/page";
 import Contactpage from "./Contact/page";
-import HomePage from "./Home/Page";
+import HomePage from "./Home/page";
 
 
 export default function Home() {

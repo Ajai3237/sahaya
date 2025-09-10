@@ -66,7 +66,10 @@ export default function Header() {
                         <span>+91 9995 27 5823</span>
                         <span>sahayahomemedicalcare@gmail.com</span>
                     </div>
+
                 </div>
+
+
             )}
 
             {/* Logo + Navbar */}
@@ -86,7 +89,11 @@ export default function Header() {
                 {/* Logo */}
                 <div style={{ flex: "1 1 auto" }}>
                     <img
-                        src="/Asset/SAHAYA_LOGO_page-copy2-removebg-preview.png"
+                        src={
+                            isMobile
+                                ? "/Asset/white_org_log.png" //  Mobile logo
+                                : "/Asset/SAHAYA_LOGO_page-copy2-removebg-preview.png" //  Desktop logo
+                        }
                         alt="Logo"
                         className="logo-effect"
                         style={{
@@ -162,7 +169,7 @@ export default function Header() {
                             top: 70,
                             right: 0,
                             width: "30%",
-                            height: "30px", 
+                            height: "30px",
                             minHeight: "150px",
                             borderRadius: "20px",
                             backgroundColor: "#fff",
@@ -179,10 +186,10 @@ export default function Header() {
                                 margin: 0,
                                 display: "flex",
                                 flexDirection: "column",
-                                justifyContent: "center", 
-                                alignItems: "center", 
+                                justifyContent: "center",
+                                alignItems: "center",
                                 gap: "20px",
-                                height: "50%", 
+                                height: "50%",
                             }}
                         >
                             <li>

@@ -1,9 +1,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Header from "@/Component/Header";
+import Header from "@/app/Header";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import Footer from "@/Component/Footer";
+import Footer from "@/app/Footer";
 config.autoAddCss = false;
 
 const geistSans = Geist({
