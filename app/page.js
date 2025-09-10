@@ -1,12 +1,15 @@
-import Aboutpage from "./about/page.jsx";
-import Contactpage from "./contact/page.jsx";
-import HomePage from "./home/page.jsx";
+
+import Aboutpage from "./about/page";
+import Contactpage from "./contact/page";
+import HomePage from "./home/page";
 
 export default function Home() {
   return (
     <>
-      <HomePage />
-      <Aboutpage />
+      
+
+      <HomePage/>
+      <Aboutpage/>
       <Contactpage/>
     </>
   );
