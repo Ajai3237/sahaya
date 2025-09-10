@@ -1,8 +1,37 @@
-import React from 'react'
+"use client";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import emailjs from "emailjs-com";
+import { ToastContainer, toast } from 'react-toastify';
 
 function Contact() {
+    const [status, setStatus] = useState("");
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+        setStatus("Sending...");
+
+        emailjs
+            .sendForm(
+                "service_cxgls2n",   // Service ID
+                "template_3ra818u",  // Template ID
+                e.target,
+                "JtC7MVyT-AClsXZ_U"    // Public Key
+            )
+            .then(
+        () => {
+          setStatus("");
+          toast.success(" Message sent successfully!"); 
+          e.target.reset();
+        },
+        () => {
+          setStatus("");
+          toast.error(" Failed to send message."); 
+        }
+      );
+    };
+
     return (
         <>
             <div
@@ -19,13 +48,8 @@ function Contact() {
                     marginTop: "-80px",
                     borderTopLeftRadius: "50px",
                     borderTopRightRadius: "50px",
-                    borderBottomLeftRadius: "0",
-                    borderBottomRightRadius: "0",
-
-
                 }}
             >
-                {/* Contact Form Box */}
                 <div
                     style={{
                         display: "flex",
@@ -46,21 +70,14 @@ function Contact() {
                             marginBottom: "20px",
                         }}
                     >
-                        <h2 style={{ color: "#105F6D", marginBottom: "10px", fontSize: "clamp(18px, 2vw, 25px)" }}>
-                            Get in Touch
-                        </h2>
-                        <p style={{ fontSize: "clamp(12px, 1.5vw, 14px)", color: "#555", marginBottom: "20px" }}>
+                        <h2 style={{ color: "#105F6D", marginBottom: "10px" }}>Get in Touch</h2>
+                        <p style={{ color: "#555", marginBottom: "20px" }}>
                             Lorem Ipsum is placeholder text used in design and development before the
                             final content is ready. It helps you see how text will look on a webpage,
                             poster, or layout.
                         </p>
-
-                        <p style={{ color: "#105F6D" }}>
-                            <strong>📍</strong> Location
-                        </p>
-                        <p style={{ color: "#105F6D" }}>
-                            <strong>📞</strong> +91 9995 27 5823
-                        </p>
+                        <p style={{ color: "#105F6D" }}><strong>📍</strong> Location</p>
+                        <p style={{ color: "#105F6D" }}><strong>📞</strong> +91 9995 27 5823</p>
                         <p>
                             <strong>📧</strong>{" "}
                             <a
@@ -70,23 +87,12 @@ function Contact() {
                                 sahayahomemedicalcare@gmail.com
                             </a>
                         </p>
-
                         <p style={{ marginTop: "20px" }}>Follow Our Social Media</p>
                         <div style={{ display: "flex", gap: "15px" }}>
-                            <a
-                                href="https://facebook.com"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{ color: "#f7931e" }}
-                            >
+                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" style={{ color: "#f7931e" }}>
                                 <FontAwesomeIcon icon={faFacebookF} size="lg" />
                             </a>
-                            <a
-                                href="https://instagram.com"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{ color: "#f7931e" }}
-                            >
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style={{ color: "#f7931e" }}>
                                 <FontAwesomeIcon icon={faInstagram} size="lg" />
                             </a>
                         </div>
@@ -94,65 +100,17 @@ function Contact() {
 
                     {/* Right Section (Form) */}
                     <div style={{ flex: "1 1 300px" }}>
-                        <h2 style={{ color: "#105F6D", marginBottom: "20px", fontSize: "clamp(18px, 2vw, 25px)" }}>
-                            Send us a Message
-                        </h2>
-                        <form>
-                            <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginBottom: "15px" }}>
-                                <input
-                                    type="text"
-                                    placeholder="Name"
-                                    style={{
-                                        flex: "1 1 45%",
-                                        padding: "10px",
-                                        borderRadius: "6px",
-                                        border: "1px solid rgba(255, 255, 255, 0.5)",
-                                    }}
-                                />
-                                <input
-                                    type="text"
-                                    placeholder="Location"
-                                    style={{
-                                        flex: "1 1 45%",
-                                        padding: "10px",
-                                        borderRadius: "6px",
-                                        border: "1px solid rgba(255, 255, 255, 0.5)",
-                                    }}
-                                />
+                        <h2 style={{ color: "#105F6D", marginBottom: "20px" }}>Send us a Message</h2>
+                        <form onSubmit={sendEmail}>
+                            <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginBottom: "15px", }}>
+                                <input name="name" type="text" placeholder="Name" style={{ flex: "1 1 45%", padding: "10px", border: "none",borderRadius: "8px" }} required />
+                                <input name="location" type="text" placeholder="Location" style={{ flex: "1 1 45%", padding: "10px" ,border: "none",borderRadius: "8px" }} />
                             </div>
                             <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginBottom: "15px" }}>
-                                <input
-                                    type="email"
-                                    placeholder="Email"
-                                    style={{
-                                        flex: "1 1 45%",
-                                        padding: "10px",
-                                        borderRadius: "6px",
-                                        border: "1px solid rgba(255, 255, 255, 0.5)",
-                                    }}
-                                />
-                                <input
-                                    type="text"
-                                    placeholder="Phone"
-                                    style={{
-                                        flex: "1 1 45%",
-                                        padding: "10px",
-                                        borderRadius: "6px",
-                                        border: "1px solid rgba(255, 255, 255, 0.5)",
-                                    }}
-                                />
+                                <input name="email" type="email" placeholder="Email" style={{ flex: "1 1 45%", padding: "10px",border: "none",borderRadius: "8px"  }} required />
+                                <input name="phone" type="text" placeholder="Phone" style={{ flex: "1 1 45%", padding: "10px" ,border: "none",borderRadius: "8px"  }} />
                             </div>
-                            <textarea
-                                placeholder="Message..."
-                                style={{
-                                    width: "100%",
-                                    padding: "10px",
-                                    borderRadius: "6px",
-                                    border: "1px solid rgba(255, 255, 255, 0.5)",
-                                    minHeight: "100px",
-                                    marginBottom: "15px",
-                                }}
-                            ></textarea>
+                            <textarea name="message" placeholder="Message..." style={{ width: "100%", padding: "10px", minHeight: "100px", marginBottom: "15px",border: "none",borderRadius: "8px"  }} required></textarea>
                             <button
                                 type="submit"
                                 style={{
@@ -167,12 +125,22 @@ function Contact() {
                                 CONTACT US
                             </button>
                         </form>
+                        <p>{status}</p>
                     </div>
                 </div>
             </div>
+            <ToastContainer />
+        </>
+    );
+}
+
+export default Contact;
 
 
-            <div>
+
+
+
+{/* <div>
                 <div
                     style={{
                         backgroundColor: "#105F6D",
@@ -186,7 +154,7 @@ function Contact() {
                         gap: "20px",
                     }}
                 >
-                    {/* Left side */}
+                    Left side
                     <div style={{ flex: 1, minWidth: "250px" }}>
                         <h3 style={{ marginBottom: "10px", fontSize: "clamp(18px, 2vw, 24px)" }}>
                             For updates
@@ -196,7 +164,7 @@ function Contact() {
                         </p>
                     </div>
 
-                    {/* Right side */}
+                    Right side
                     <div
                         style={{
                             display: "flex",
@@ -239,12 +207,4 @@ function Contact() {
                 </div>
 
 
-            </div>
-
-
-
-        </>
-    )
-}
-
-export default Contact
+            </div> */}

@@ -87,6 +87,28 @@ function About() {
         imgRef.current.style.transform = "rotateX(0) rotateY(0) scale(1)";
     };
 
+
+
+    //  animation hero content 
+
+    const heroRef = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("animate");
+                    observer.unobserve(entry.target); // animate once
+                }
+            },
+            { threshold: 0.3 }
+        );
+
+        if (heroRef.current) observer.observe(heroRef.current);
+    }, []);
+
+
+
     return (
         <>
             <div
@@ -100,7 +122,7 @@ function About() {
                         <div
                             key={i}
                             className={show ? "show" : ""}
-                            style={{ transitionDelay: `${i * 0.2}s` }} 
+                            style={{ transitionDelay: `${i * 0.2}s` }}
                         >
                             <FontAwesomeIcon
                                 icon={faCircleCheck}
@@ -117,7 +139,7 @@ function About() {
             <div style={{ position: "relative" }}>
                 {/* div 2 */}
                 <div className="hero-section">
-                    <div className="hero-content">
+                    <div ref={heroRef} className="hero-content">
                         <h1>
                             Sahaya <br />
                             Goes Above <br />
