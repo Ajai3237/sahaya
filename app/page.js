@@ -1,16 +1,13 @@
 import Aboutpage from "./about/page";
 import Contactpage from "./contact/page";
-import HomePage from "./home/Page";
-
+import HomePage from "./home/page";
 
 export default function Home() {
   return (
     <>
-    <HomePage/>
-    <Aboutpage/>?
-    <Contactpage/>
-    
+      <HomePage />
+      <Aboutpage />
+      <Contactpage />
     </>
-    
   );
 }
