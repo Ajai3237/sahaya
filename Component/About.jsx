@@ -111,28 +111,27 @@ function About() {
 
     return (
         <>
-            <div
-                ref={sectionRef}
-                className={`advance-services ${show ? "show" : ""}`}
-            >
-                <h2>Advance Services</h2>
-
-                <div className="advance-services-grid">
-                    {services.map((service, i) => (
-                        <div
-                            key={i}
-                            className={show ? "show" : ""}
-                            style={{ transitionDelay: `${i * 0.2}s` }}
-                        >
-                            <FontAwesomeIcon
-                                icon={faCircleCheck}
-                                style={{ color: "#f7931e", marginRight: "8px" }}
-                            />
-                            {service}
-                        </div>
-                    ))}
-                </div>
-            </div>
+             <div
+    ref={sectionRef}
+    className={`advance-services ${show ? "show" : ""}`}
+  >
+    <h2>Advance Services</h2>
+    <div className="advance-services-grid">
+      {services.map((service, i) => (
+        <div
+          key={i}
+          className={show ? "show" : ""}
+          style={{ transitionDelay: `${i * 0.2}s` }}
+        >
+          <FontAwesomeIcon
+            icon={faCircleCheck}
+            style={{ color: "#f7931e", marginRight: "8px" }}
+          />
+          {service}
+        </div>
+      ))}
+    </div>
+  </div>
 
 
             {/* wrapper for div 2 + center div */}

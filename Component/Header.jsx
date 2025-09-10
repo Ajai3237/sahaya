@@ -162,7 +162,8 @@ export default function Header() {
                             top: 70,
                             right: 0,
                             width: "30%",
-                            height: "35%",
+                            height: "30px", 
+                            minHeight: "150px",
                             borderRadius: "20px",
                             backgroundColor: "#fff",
                             padding: "80px 20px 20px 20px",
@@ -178,7 +179,10 @@ export default function Header() {
                                 margin: 0,
                                 display: "flex",
                                 flexDirection: "column",
+                                justifyContent: "center", 
+                                alignItems: "center", 
                                 gap: "20px",
+                                height: "50%", 
                             }}
                         >
                             <li>
@@ -251,6 +255,7 @@ export default function Header() {
                             </li>
                         </ul>
                     </nav>
+
 
                 </div>
             )}
